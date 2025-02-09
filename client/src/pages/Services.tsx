@@ -1,84 +1,97 @@
 import { motion } from "framer-motion";
 import {
   Code,
-  Smartphone,
-  Palette,
-  Globe,
-  BarChart,
+  FileText,
   Search,
+  LineChart,
+  Edit,
+  PenTool,
+  Layout
 } from "lucide-react";
 
 const services = [
   {
-    icon: <Code />,
-    title: "Web Development",
+    icon: <Layout />,
+    title: "🤜 Front-end Development",
     description:
-      "Custom websites and web applications built with cutting-edge technologies.",
+      "Building responsive and user-friendly web interfaces with modern technologies.",
     features: [
       "Responsive Design",
+      "Interactive UI/UX",
+      "Modern Frameworks",
+      "Performance Optimization",
+    ],
+  },
+  {
+    icon: <Code />,
+    title: "🤜 Customized Web Solutions",
+    description:
+      "Tailored web applications and solutions designed to meet your specific needs.",
+    features: [
+      "Custom Web Apps",
       "E-commerce Solutions",
-      "Content Management Systems",
-      "Progressive Web Apps",
+      "API Integration",
+      "Web Portals",
     ],
   },
   {
-    icon: <Smartphone />,
-    title: "Mobile Development",
+    icon: <FileText />,
+    title: "🤜 Word Document Creations",
     description:
-      "Native and cross-platform mobile applications for iOS and Android.",
+      "Professional document creation and formatting services for all your needs.",
     features: [
-      "Native iOS & Android Apps",
-      "Cross-platform Development",
-      "App Store Optimization",
-      "Mobile UI/UX Design",
+      "Business Documents",
+      "Technical Documentation",
+      "Report Writing",
+      "Template Design",
     ],
   },
   {
-    icon: <Palette />,
-    title: "UI/UX Design",
+    icon: <LineChart />,
+    title: "🤜 Research and Analysis",
     description:
-      "User-centered design solutions that create engaging experiences.",
+      "In-depth research and data analysis to drive informed decision-making.",
     features: [
-      "User Research",
-      "Wireframing & Prototyping",
-      "Visual Design",
-      "Usability Testing",
-    ],
-  },
-  {
-    icon: <Globe />,
-    title: "Digital Marketing",
-    description:
-      "Strategic digital marketing solutions to grow your online presence.",
-    features: [
-      "Social Media Marketing",
-      "Content Strategy",
-      "Email Marketing",
-      "PPC Campaigns",
-    ],
-  },
-  {
-    icon: <BarChart />,
-    title: "Analytics & Optimization",
-    description:
-      "Data-driven insights and optimization strategies for better performance.",
-    features: [
-      "Performance Monitoring",
-      "Conversion Optimization",
-      "User Behavior Analysis",
-      "A/B Testing",
+      "Market Research",
+      "Competitor Analysis",
+      "Data Visualization",
+      "Trend Analysis",
     ],
   },
   {
     icon: <Search />,
-    title: "SEO Services",
+    title: "🤜 SEO & Sales",
     description:
-      "Comprehensive SEO solutions to improve your search engine rankings.",
+      "Boost your online visibility and drive sales with expert SEO strategies.",
     features: [
-      "Keyword Research",
-      "On-page Optimization",
-      "Technical SEO",
-      "Link Building",
+      "Search Engine Optimization",
+      "Sales Strategies",
+      "Digital Marketing",
+      "Analytics & Reporting",
+    ],
+  },
+  {
+    icon: <Edit />,
+    title: "🤜 Editing Services",
+    description:
+      "Professional editing and proofreading services for all types of content.",
+    features: [
+      "Content Editing",
+      "Proofreading",
+      "Grammar Correction",
+      "Style Enhancement",
+    ],
+  },
+  {
+    icon: <PenTool />,
+    title: "🤜 Content Services",
+    description:
+      "High-quality content creation tailored to your brand and audience.",
+    features: [
+      "Content Writing",
+      "Blog Posts",
+      "Social Media Content",
+      "Copywriting",
     ],
   },
 ];
@@ -94,10 +107,10 @@ export default function Services() {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <h1 className="text-4xl font-bold text-gray-900 mb-6">Our Services</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h1 className="text-4xl font-bold text-foreground dark:text-white mb-6">Our Services</h1>
+          <p className="text-xl text-muted-foreground dark:text-gray-300 max-w-3xl mx-auto">
             Comprehensive digital solutions tailored to your business needs.
-            We combine creativity and technology to deliver exceptional results.
+            We combine creativity and expertise to deliver exceptional results.
           </p>
         </motion.div>
       </section>
@@ -112,16 +125,18 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+              className="bg-card dark:bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
             >
               <div className="text-primary mb-4">{service.icon}</div>
-              <h2 className="text-2xl font-semibold mb-4">{service.title}</h2>
-              <p className="text-gray-600 mb-6">{service.description}</p>
+              <h2 className="text-2xl font-semibold text-foreground dark:text-white mb-4">
+                {service.title}
+              </h2>
+              <p className="text-muted-foreground dark:text-gray-300 mb-6">{service.description}</p>
               <ul className="space-y-2">
                 {service.features.map((feature, featureIndex) => (
                   <li
                     key={featureIndex}
-                    className="flex items-center text-gray-700"
+                    className="flex items-center text-muted-foreground dark:text-gray-300"
                   >
                     <span className="w-1.5 h-1.5 bg-primary rounded-full mr-2" />
                     {feature}

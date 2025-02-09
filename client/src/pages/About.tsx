@@ -11,8 +11,8 @@ export default function About() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl font-bold text-gray-900 mb-6">About Us</h1>
-          <p className="text-xl text-gray-600 max-w-3xl">
+          <h1 className="text-4xl font-bold text-foreground dark:text-white mb-6">About Us</h1>
+          <p className="text-xl text-muted-foreground dark:text-gray-300 max-w-3xl">
             We are a team of passionate digital creators, developers, and designers
             committed to delivering exceptional digital solutions that drive
             business growth.
@@ -21,7 +21,7 @@ export default function About() {
       </section>
 
       {/* Values Section */}
-      <section className="bg-gray-50 py-16">
+      <section className="bg-muted/50 dark:bg-gray-800/50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0 }}
@@ -30,8 +30,8 @@ export default function About() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Values</h2>
-            <p className="text-gray-600">
+            <h2 className="text-3xl font-bold text-foreground dark:text-white mb-4">Our Values</h2>
+            <p className="text-muted-foreground dark:text-gray-300">
               The principles that guide our work and relationships.
             </p>
           </motion.div>
@@ -63,11 +63,11 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="bg-white p-8 rounded-lg shadow-lg text-center"
+                className="bg-card dark:bg-gray-900 p-8 rounded-lg shadow-lg"
               >
                 <div className="text-primary mb-4 inline-block">{value.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
+                <h3 className="text-xl font-semibold text-foreground dark:text-white mb-2">{value.title}</h3>
+                <p className="text-muted-foreground dark:text-gray-300">{value.description}</p>
               </motion.div>
             ))}
           </div>
@@ -84,8 +84,8 @@ export default function About() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Team</h2>
-            <p className="text-gray-600">
+            <h2 className="text-3xl font-bold text-foreground dark:text-white mb-4">Our Team</h2>
+            <p className="text-muted-foreground dark:text-gray-300">
               Meet the talented individuals behind our success.
             </p>
           </motion.div>
@@ -114,16 +114,16 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="bg-white p-6 rounded-lg shadow-lg"
+                className="bg-card dark:bg-gray-900 p-6 rounded-lg shadow-lg"
               >
                 <div className="mb-4">
-                  <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold text-center">
+                  <div className="w-24 h-24 bg-muted dark:bg-gray-800 rounded-full mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold text-foreground dark:text-white text-center">
                     {member.name}
                   </h3>
                   <p className="text-primary text-center">{member.role}</p>
                 </div>
-                <p className="text-gray-600 text-center">{member.bio}</p>
+                <p className="text-muted-foreground dark:text-gray-300 text-center">{member.bio}</p>
               </motion.div>
             ))}
           </div>
