@@ -12,7 +12,7 @@ import {
 const services = [
   {
     icon: <Layout />,
-    title: "🤜 Front-end Development",
+    title: "Front-end Development",
     description:
       "Building responsive and user-friendly web interfaces with modern technologies.",
     features: [
@@ -24,7 +24,7 @@ const services = [
   },
   {
     icon: <Code />,
-    title: "🤜 Customized Web Solutions",
+    title: "Customized Web Solutions",
     description:
       "Tailored web applications and solutions designed to meet your specific needs.",
     features: [
@@ -36,7 +36,7 @@ const services = [
   },
   {
     icon: <FileText />,
-    title: "🤜 Word Document Creations",
+    title: "Word Document Creations",
     description:
       "Professional document creation and formatting services for all your needs.",
     features: [
@@ -48,7 +48,7 @@ const services = [
   },
   {
     icon: <LineChart />,
-    title: "🤜 Research and Analysis",
+    title: "Research and Analysis",
     description:
       "In-depth research and data analysis to drive informed decision-making.",
     features: [
@@ -60,7 +60,7 @@ const services = [
   },
   {
     icon: <Search />,
-    title: "🤜 SEO & Sales",
+    title: "SEO & Sales",
     description:
       "Boost your online visibility and drive sales with expert SEO strategies.",
     features: [
@@ -72,7 +72,7 @@ const services = [
   },
   {
     icon: <Edit />,
-    title: "🤜 Editing Services",
+    title: "Editing Services",
     description:
       "Professional editing and proofreading services for all types of content.",
     features: [
@@ -84,7 +84,7 @@ const services = [
   },
   {
     icon: <PenTool />,
-    title: "🤜 Content Services",
+    title: "Content Services",
     description:
       "High-quality content creation tailored to your brand and audience.",
     features: [
