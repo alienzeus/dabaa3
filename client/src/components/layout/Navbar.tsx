@@ -2,6 +2,7 @@ import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
@@ -17,12 +18,14 @@ export default function Navbar() {
   const [location] = useLocation();
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b">
+    <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
             <Link href="/">
-              <a className="text-2xl font-bold text-primary">DigiServ</a>
+              <a className="text-2xl font-bold text-primary hover:text-primary/80 transition-colors">
+                DABAA
+              </a>
             </Link>
           </div>
 
@@ -34,17 +37,19 @@ export default function Navbar() {
                   className={`${
                     location === link.href
                       ? "text-primary font-semibold"
-                      : "text-gray-600 hover:text-primary"
+                      : "text-foreground hover:text-primary"
                   } transition-colors`}
                 >
                   {link.label}
                 </a>
               </Link>
             ))}
+            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
+          <div className="md:hidden flex items-center gap-4">
+            <ThemeToggle />
             <Button
               variant="ghost"
               size="icon"
@@ -66,14 +71,14 @@ export default function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden"
           >
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white shadow-lg">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-background shadow-lg">
               {links.map((link) => (
                 <Link key={link.href} href={link.href}>
                   <a
                     className={`${
                       location === link.href
-                        ? "bg-primary text-white"
-                        : "text-gray-600 hover:bg-primary/10"
+                        ? "bg-primary text-primary-foreground"
+                        : "text-foreground hover:bg-primary/10"
                     } block px-3 py-2 rounded-md text-base font-medium transition-colors`}
                     onClick={() => setIsOpen(false)}
                   >
