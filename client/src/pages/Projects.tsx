@@ -55,66 +55,76 @@ const projects = [
 
 export default function Projects() {
   return (
-    <div className="py-16">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center"
-        >
-          <h1 className="text-4xl font-bold text-gray-900 mb-6">Our Projects</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Explore our portfolio of successful digital projects that showcase our
-            expertise and creativity.
-          </p>
-        </motion.div>
+      <section className="relative py-20 bg-gradient-to-b from-primary/5 via-transparent to-transparent dark:from-primary/10 dark:via-transparent dark:to-transparent">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
+          >
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-foreground dark:text-white mb-6">
+              Our Projects
+            </h1>
+            <p className="text-xl text-muted-foreground dark:text-gray-300 max-w-3xl mx-auto font-sans">
+              Explore our portfolio of successful digital projects that showcase our
+              expertise and creativity.
+            </p>
+          </motion.div>
+        </div>
       </section>
 
       {/* Projects Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-lg shadow-lg overflow-hidden"
-            >
-              <div
-                className="h-48 bg-cover bg-center"
-                style={{ backgroundImage: `url(${project.image})` }}
-              />
-              <div className="p-6">
-                <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-xl font-semibold">{project.title}</h3>
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary hover:text-primary/80 transition-colors"
-                  >
-                    <ExternalLink className="h-5 w-5" />
-                  </a>
-                </div>
-                <p className="text-gray-600 mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag, tagIndex) => (
-                    <Badge
-                      key={tagIndex}
-                      variant="secondary"
-                      className="bg-primary/10 text-primary"
+      <section className="py-20 bg-background dark:bg-gray-900/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group bg-card dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <div
+                  className="h-48 bg-cover bg-center transform transition-transform duration-300 group-hover:scale-105"
+                  style={{ backgroundImage: `url(${project.image})` }}
+                />
+                <div className="p-6">
+                  <div className="flex justify-between items-start mb-4">
+                    <h3 className="font-heading text-xl font-semibold text-foreground dark:text-white">
+                      {project.title}
+                    </h3>
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:text-primary/80 transition-colors"
                     >
-                      {tag}
-                    </Badge>
-                  ))}
+                      <ExternalLink className="h-5 w-5" />
+                    </a>
+                  </div>
+                  <p className="text-muted-foreground dark:text-gray-300 mb-4 font-sans">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag, tagIndex) => (
+                      <Badge
+                        key={tagIndex}
+                        variant="secondary"
+                        className="bg-primary/10 text-primary dark:bg-primary/20 dark:text-primary-foreground font-sans"
+                      >
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
     </div>

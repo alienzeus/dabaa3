@@ -2,5 +2,9 @@
   "variant": "professional",
   "primary": "#6366F1",
   "appearance": "system",
-  "radius": 0.75
+  "radius": 0.75,
+  "font": {
+    "sans": "Inter",
+    "heading": "Lexend"
+  }
 }
