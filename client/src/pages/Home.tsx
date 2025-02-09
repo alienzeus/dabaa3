@@ -15,11 +15,11 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-foreground dark:text-white mb-6">
               Digital Solutions for the{" "}
               <span className="text-primary">Modern World</span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground dark:text-gray-300 mb-8 max-w-2xl mx-auto">
               We create innovative digital experiences that transform businesses
               and delight users.
             </p>
@@ -34,7 +34,7 @@ export default function Home() {
       </section>
 
       {/* Services Preview */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-background dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0 }}
@@ -43,10 +43,10 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-foreground dark:text-white mb-4">
               Our Services
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-muted-foreground dark:text-gray-300 max-w-2xl mx-auto">
               We offer a comprehensive suite of digital services to help your
               business thrive in the digital age.
             </p>
@@ -79,11 +79,11 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+                className="bg-card dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
               >
                 <div className="text-primary mb-4">{service.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
+                <h3 className="text-xl font-semibold text-foreground dark:text-white mb-2">{service.title}</h3>
+                <p className="text-muted-foreground dark:text-gray-300">{service.description}</p>
               </motion.div>
             ))}
           </div>
