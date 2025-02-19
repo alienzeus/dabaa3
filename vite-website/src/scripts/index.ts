@@ -1,6 +1,6 @@
 import '../style.css'
 import typescriptLogo from '../assets/typescript.svg'
-import viteLogo from './vite-website/vite.svg'
+import viteLogo from '../assets/vite.svg'
 import { setupCounter } from './counter.ts'
 const { BASE_URL } = import.meta.env;
 
